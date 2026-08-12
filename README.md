@@ -46,6 +46,10 @@ Full detail: [SPEC-020 Reference Deployment Profiles](specs/SPEC-020-reference-d
 
 **No Kubernetes, event broker, or service mesh is required for a conformant MVP.**
 
+### Current reference implementation (informative)
+
+The Autonomous Giving implementation currently uses GitHub for source and CI, Cloudflare Workers Static Assets for public edge delivery, and Supabase for Auth, PostgreSQL, RLS, Storage, and data-centric Edge Functions. This practical example is not a platform conformance requirement; see [SPEC-020](specs/SPEC-020-reference-deployment-profiles.md) and [ADR-012](adr/ADR-012-cloudflare-supabase-reference-deployment.md).
+
 ## Repository layout
 
 | Path | Authority |

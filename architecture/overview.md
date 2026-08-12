@@ -51,3 +51,7 @@ Logical capabilities do **not** require three deployments. The **recommended MVP
 ```
 
 Distributed processes, brokers, and Kubernetes appear only in optional later profiles ([SPEC-020](../specs/SPEC-020-reference-deployment-profiles.md)).
+
+### Reference implementation (informative)
+
+The present Autonomous Giving implementation uses Cloudflare Workers Static Assets for static edge delivery and Supabase for Auth, PostgreSQL, RLS, Storage, and data-centric Edge Functions. This physical example does not alter the logical capability boundaries or create a vendor mandate. Worker APIs and runtime public projections are future work, not deployed capability claims.
