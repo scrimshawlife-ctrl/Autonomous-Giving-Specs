@@ -196,6 +196,10 @@
     {
       "id": "ADR-011",
       "type": "adr"
+    },
+    {
+      "id": "ADR-012",
+      "type": "adr"
     }
   ],
   "edges": [
@@ -1167,6 +1171,11 @@
     {
       "from": "SPEC-020",
       "to": "ADR-010",
+      "type": "related_adr"
+    },
+    {
+      "from": "SPEC-020",
+      "to": "ADR-012",
       "type": "related_adr"
     },
     {

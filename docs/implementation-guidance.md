@@ -22,6 +22,10 @@ GitHub Pages → Single backend → Capability modules → PostgreSQL + object s
 
 **Not required for MVP:** Kubernetes, event broker, service mesh, multiple databases, per-capability containers.
 
+### Current reference implementation (informative)
+
+Autonomous Giving currently applies Profile B as GitHub source/CI, Cloudflare Workers Static Assets for a static-first public frontend, and Supabase for identity and persistent platform services. This does not mandate either vendor. The public AGI workbench does not need a Worker API or OpenNext until a verified runtime requirement arises.
+
 ## Capability modules
 
 Implement Fund Intel, Autonomous Giving, and Impact Relay as **modules** with:

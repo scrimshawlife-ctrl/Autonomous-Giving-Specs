@@ -1,7 +1,7 @@
 ---
 id: SPEC-020
 title: Reference Deployment Profiles
-version: 1.0.0
+version: 1.1.0
 status: accepted
 authority: informative
 owner: Platform Architecture
@@ -13,93 +13,62 @@ related_specs:
 related_adrs:
 - ADR-001
 - ADR-010
+- ADR-012
 related_contracts: []
 ---
 
 # SPEC-020: Reference Deployment Profiles
-| Version | 1.0.0 | Owner | Platform Architecture | Status | Accepted |
-| --- | --- | --- | --- | --- | --- |
-| Dependencies | SPEC-002A, SPEC-006 | Related ADRs | ADR-001, ADR-010 | Related contracts | None |
 
-## Purpose
-Publish **informative** reference deployment profiles so implementers share a clear MVP path without reading distribution into the platform canon.
+## Purpose and authority
 
-## Scope
-Physical deployment examples only. Logical capabilities remain defined by [SPEC-006](SPEC-006-capability-boundaries.md). These profiles are **examples, not requirements**.
-
-## Authority
-This specification is **informative**. Conformance is not conditioned on selecting a profile. Implementations MAY invent other topologies that preserve capabilities, contracts, and lifecycle.
+Publish **informative** deployment profiles. They are examples, not conformance requirements: implementations MAY choose another topology that preserves the platform capabilities, contracts, lifecycle, and security boundaries.
 
 ## Profile A — Demo
 
 | Element | Choice |
 | --- | --- |
-| Frontend | GitHub Pages (or equivalent static host) |
-| Data | Static fixtures ([Community AI Lab](../demo/community-ai-lab/)) |
+| Frontend | Static host or equivalent |
+| Data | Static fixtures |
 | Backend | None required |
 | Secrets | None |
-| Infrastructure | None |
 
 Use for narrative demos and deterministic replay without operational systems.
 
-## Profile B — MVP (**recommended**)
+## Profile B — MVP (recommended)
 
 ```text
-GitHub Pages
-    ↓
-Single Backend (one executable)
-    ↓
-Modules: Fund Intel | Autonomous Giving | Impact Relay
-    ↓
-PostgreSQL  +  Object Storage  +  Background Worker
+Static/Web Frontend
+        ↓
+Edge Application Runtime (optional, request-driven)
+        ↓
+Modular Platform Capabilities
+        ↓
+PostgreSQL + Object Storage
 ```
 
 | Characteristic | Value |
 | --- | --- |
-| Executables | Single application process (+ optional worker process) |
-| Deployments | Single operational unit |
+| Frontend | Static-first web application |
+| Edge runtime | Optional; request-driven only when a runtime boundary is needed |
 | Database | One primary PostgreSQL |
-| Storage | S3-compatible object storage for evidence binaries |
-| Architecture | Modular monolith; capability modules with clear boundaries |
-| Orchestration | Not required |
-| Event broker | Not required |
-| Service mesh | Not required |
+| Storage | Object storage for evidence binaries |
+| Authentication | OIDC-compatible and implementation-selected |
+| Background work | Managed function or worker only when required |
+| Architecture | Modular monolith first; capabilities remain distinct in code |
+| Orchestration / broker / service mesh | Not required |
 
-Capabilities remain separate **in code**. Deployment remains **unified**.
+### Informative Autonomous Giving reference implementation
 
-### Recommended stack (MVP)
-
-| Concern | Recommendation |
-| --- | --- |
-| Frontend | GitHub Pages |
-| Backend | Single application |
-| Language | Implementation choice |
-| Database | PostgreSQL |
-| Storage | S3-compatible |
-| Worker | Background process (same codebase or sibling process) |
-| Authentication | OIDC when required |
+The present Autonomous Giving implementation uses GitHub for source and CI, Cloudflare Workers Static Assets for public edge delivery, and Supabase for Auth, PostgreSQL, RLS, Storage, and data-centric Edge Functions. This is a practical reference, not a vendor requirement. Its current AGI public surface is a static export; Worker APIs and runtime projections remain future work.
 
 ## Profile C — Production
 
-Optional horizontal scaling of the same modular application, optional worker separation, optional multiple instances behind a load balancer. Still one logical system; not a microservices mandate.
+Optional horizontal scaling, separate managed background work, or an edge runtime can be introduced with operational justification while retaining the same modular logical system.
 
 ## Profile D — Enterprise
 
-Optional extraction of individual capabilities, optional event streaming, optional Kubernetes, optional multi-region. Adopt only with operational justification ([SPEC-002A](SPEC-002A-architectural-principles.md) extraction criteria).
-
-## Evolution path
-
-```text
-Phase 1  Modular Monolith (Profile B)
-    ↓
-Phase 2  Background Workers
-    ↓
-Phase 3  Extract Individual Capabilities (only if justified)
-    ↓
-Phase 4  Distributed Platform
-    ↓
-Phase 5  Enterprise Deployment
-```
+Optional extraction, streaming, Kubernetes, and multi-region operation. Adopt only when the extraction criteria in [SPEC-002A](SPEC-002A-architectural-principles.md) are met.
 
 ## Non-goals
-This document does not prescribe cloud vendors, IaC tools, or force Profile D. It replaces any implication that distributed infrastructure is the reference platform shape.
+
+This document does not prescribe cloud vendors, IaC tools, D1, a second database, a full Next.js runtime, or distributed infrastructure. It does not make Profile D the reference shape.
