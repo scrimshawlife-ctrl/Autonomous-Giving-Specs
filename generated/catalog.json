@@ -185,7 +185,7 @@
       "version": "1.0.0",
       "status": "proposed",
       "owner": "Platform Architecture",
-      "path": "adr/ADR-002-signals-stack.md"
+      "path": "adr/ADR-002-platform-canon.md"
     },
     {
       "id": "ADR-003",
@@ -193,7 +193,7 @@
       "version": "1.0.0",
       "status": "accepted",
       "owner": "Platform Architecture",
-      "path": "adr/ADR-003-platform-canon.md"
+      "path": "adr/ADR-003-signals-stack.md"
     },
     {
       "id": "ADR-004",
@@ -239,7 +239,7 @@
       "id": "ADR-009",
       "title": "Deterministic Demo",
       "version": "1.0.0",
-      "status": "accepted",
+      "status": "proposed",
       "owner": "Platform Architecture",
       "path": "adr/ADR-009-deterministic-demo.md"
     },

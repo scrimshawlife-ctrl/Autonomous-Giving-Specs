@@ -4,8 +4,8 @@ This matrix is the navigation layer between lifecycle authority and machine-read
 
 | Lifecycle stage | Governing specification | Decision | Event | Contract / schema | Accountable owner |
 | --- | --- | --- | --- | --- | --- |
-| Signal | [SPEC-003](../specs/SPEC-003-signals-stack.md) | [ADR-003](../adr/ADR-003-platform-canon.md) | [EVENT-001](../events/EVENT-001-signal-detected.md) | [signal schema](../schemas/signal-detected.json) | Fund Intel |
-| Opportunity | [SPEC-003](../specs/SPEC-003-signals-stack.md) | [ADR-003](../adr/ADR-003-platform-canon.md) | [EVENT-002](../events/EVENT-002-opportunity-created.md) | [CONTRACT-001](../contracts/CONTRACT-001-opportunity.md) / [schema](../schemas/opportunity.json) | Fund Intel |
+| Signal | [SPEC-003](../specs/SPEC-003-signals-stack.md) | [ADR-003](../adr/ADR-003-signals-stack.md) | [EVENT-001](../events/EVENT-001-signal-detected.md) | [signal schema](../schemas/signal-detected.json) | Fund Intel |
+| Opportunity | [SPEC-003](../specs/SPEC-003-signals-stack.md) | [ADR-003](../adr/ADR-003-signals-stack.md) | [EVENT-002](../events/EVENT-002-opportunity-created.md) | [CONTRACT-001](../contracts/CONTRACT-001-opportunity.md) / [schema](../schemas/opportunity.json) | Fund Intel |
 | Recommendation | [SPEC-003](../specs/SPEC-003-signals-stack.md) | [ADR-006](../adr/ADR-006-human-approval.md) | [EVENT-003](../events/EVENT-003-recommendation-generated.md) | [CONTRACT-002](../contracts/CONTRACT-002-recommendation.md) / [schema](../schemas/recommendation.json) | Fund Intel |
 | Approval | [SPEC-005](../specs/SPEC-005-lifecycle.md) | [ADR-006](../adr/ADR-006-human-approval.md) | [EVENT-004](../events/EVENT-004-approval-granted.md) | [approval schema](../schemas/approval-granted.json) | Governance |
 | Allocation | [SPEC-005](../specs/SPEC-005-lifecycle.md) | [ADR-005](../adr/ADR-005-allocation-id.md) | [EVENT-005](../events/EVENT-005-allocation-created.md) | [CONTRACT-003](../contracts/CONTRACT-003-allocation.md) / [schema](../schemas/allocation.json) | Autonomous Giving |
