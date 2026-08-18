@@ -5,7 +5,7 @@ authority: normative
 owner: Platform Architecture
 date: '2026-08-03'
 title: Deterministic Demo
-status: accepted
+status: proposed
 related_specs:
 - SPEC-011
 ---
@@ -15,7 +15,7 @@ related_specs:
 | Status | Proposed |
 | --- | --- |
 | Date | 2026-08-03 |
-| Related specs | SPEC-007, SPEC-008 |
+| Related specs | SPEC-011 |
 
 ## Context
 

@@ -5,8 +5,8 @@ ADRs use Michael Nygard's lightweight format: context, decision, status, consequ
 | ID | Decision | Status |
 | --- | --- | --- |
 | ADR-001 | [Repository Strategy](ADR-001-repository-strategy.md) | Accepted |
-| ADR-002 | [Platform Canon](ADR-002-signals-stack.md) | Accepted |
-| ADR-003 | [Signals Stack](ADR-003-platform-canon.md) | Proposed |
+| ADR-002 | [Platform Canon](ADR-002-platform-canon.md) | Proposed |
+| ADR-003 | [Signals Stack](ADR-003-signals-stack.md) | Accepted |
 | ADR-004 | [Repository Ownership](ADR-004-repository-ownership.md) | Accepted |
 | ADR-005 | [allocationId](ADR-005-allocation-id.md) | Accepted |
 | ADR-006 | [Human Approval](ADR-006-human-approval.md) | Accepted |
