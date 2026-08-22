@@ -11,7 +11,7 @@ python validation/validate_all.py --output validation-report.json
 
 The command **fails closed**: any error yields a non-zero exit code and `"result": "FAIL"`.
 
-CI also runs Markdown link validation and inventory floors. See [validation/README.md](../validation/README.md).
+CI also runs Markdown link validation (via [`.lychee.toml`](../.lychee.toml)) and inventory floors. See [validation/README.md](../validation/README.md). Private sibling GitHub repos are excluded from unauthenticated link checks; relative and public URLs still fail closed.
 
 ### What is enforced
 

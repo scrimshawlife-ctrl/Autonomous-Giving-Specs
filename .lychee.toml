@@ -1,0 +1,13 @@
+# Specs is public. Product implementation repos are private, so unauthenticated
+# GitHub link checks return 404 even when the URLs are valid for collaborators.
+# Default GITHUB_TOKEN cannot see sibling private repos, so exclude them here
+# rather than treating those 404s as broken canon links.
+# Literal TOML strings: do not double-escape regex dots.
+exclude = [
+  '^https://github.com/scrimshawlife-ctrl/Portofolio-Signals',
+  '^https://github.com/scrimshawlife-ctrl/Fund-Intel',
+  '^https://github.com/scrimshawlife-ctrl/Autonomous-Giving-Incorporated',
+  '^https://github.com/scrimshawlife-ctrl/Impact-Relay',
+]
+exclude_path = ['^dist/']
+include_mail = false

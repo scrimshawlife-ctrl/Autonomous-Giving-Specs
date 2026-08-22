@@ -69,3 +69,5 @@ Frontmatter for SPEC / ADR / CONTRACT / EVENT documents is defined under `schema
 ## CI
 
 GitHub Actions workflow [`.github/workflows/spec-validation.yml`](../.github/workflows/spec-validation.yml) runs link checks, `validate_all.py`, index generation, and a packaging smoke test on every pull request and push to `main`.
+
+Lychee uses [`.lychee.toml`](../.lychee.toml). Product implementation repos (Portfolio Signals, Fund Intel, Autonomous Giving Incorporated, Impact Relay) are private, so unauthenticated GitHub 404s for those URLs are excluded. Sibling `GITHUB_TOKEN` cannot see them either. Public and relative links remain fail-closed.
