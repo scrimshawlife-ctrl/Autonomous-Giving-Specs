@@ -25,7 +25,7 @@ jobs:
       - name: Markdown link validation
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --include-mail=false README.md '**/*.md'
+          args: --config .lychee.toml --no-progress README.md '**/*.md'
           fail: true
 
       - name: Run full specification validation
